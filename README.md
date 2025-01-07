@@ -10,21 +10,20 @@
 ## Запуск
 ### App
 ```
-cd app
+cd services/noteapp
 docker build -t node-app .
 docker-compose up
 ```
 ### Checker
 При запуске в режиме "put" после успешного выполнения в stdout выводится новый id для флага вида "username password". Режим "get" работает с использованием изменённого в режиме "put" id.
 ```
-cd checker
+cd checkers/noteapp
 pip install -r requirements.txt
 python3 checker <regime> <hostname> ...
 ```
 ### Exploits
 ```
-cd exploits
-pip install -r requirements.txt
+cd sploits/noteapp
 python3 sql.py <hostname>
 python3 pass.py <hostname>
 python3 coockie.py <hostname>
