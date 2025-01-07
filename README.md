@@ -19,3 +19,11 @@ cd checker
 pip install -r requirements.txt
 python3 checker <arg1> <arg2> ...
 ```
+### Exploits
+```
+cd exploits
+pip install -r requirements.txt
+python3 sql.py <hostname>
+python3 pass.py <hostname>
+python3 coockie.py <hostname>
+```
