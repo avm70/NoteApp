@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note App</title>
+    <link rel="stylesheet" href="https://unpkg.com/98.css">
+</head>
+<body style="background-color: #c0c0c0; align-items: center; justify-content: center; display: flex;">
+    <div class="window" style="width: 500px; height: 180px;">
+        <div class="title-bar">
+            <div class="title-bar-text">Registration</div>
+            <div class="title-bar-controls">
+                <button aria-label="Minimize"></button>
+                <button aria-label="Maximize"></button>
+                <button aria-label="Close"></button>
+            </div>
+        </div>
+        <div class="window-body">
+            <div style="text-align: center; margin-top: 20px;">
+                <strong style="color: purple; font-size: 30px;">✨ Registration successful! ✨</strong>
+            </div>
+            <div style="margin-top: 20px; font-size: 15px;">
+                Your password: {{password}}
+            </div>
+            <div>
+                <button onclick="window.location.href='/'" style="font-size: 15px; height: 30px; width: 150px; margin-top: 20px; margin-left: 325px;">Back to main page</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

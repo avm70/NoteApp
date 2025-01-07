@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note App</title>
+    <link rel="stylesheet" href="https://unpkg.com/98.css">
+</head>
+<body style="background-color: #c0c0c0; align-items: center; justify-content: center; display: flex;">
+    <div class="window" style="width: 300px; height: 180px;">
+        <div class="title-bar">
+            <div class="title-bar-text">Registration</div>
+            <div class="title-bar-controls">
+                <button aria-label="Minimize"></button>
+                <button aria-label="Maximize"></button>
+                <button aria-label="Close"></button>
+            </div>
+        </div>
+        <div class="window-body">
+            <div style="text-align: center; margin-top: 20px;">
+                <strong style="color: purple; font-size: 30px;">✨ Registration ✨</strong>
+            </div>
+            <form method="POST" action="/register" id="registerForm" style="margin-top: 20px; text-align: center; font-size: 15px;">
+                Username: 
+                <input type="text" name="username" id="nameInput" style="font-size: 15px;"><br>
+                <input type="submit" value="Register" style="font-size: 15px; height: 30px; width: 100px; margin-top: 20px; margin-left:170px">
+            </form>
+            <script>
+                document.getElementById("registerForm").addEventListener("submit", function (event) {
+                    event.preventDefault();
+                    const usernameInput = document.getElementById("nameInput").value.trim();
+                    if (!usernameInput) {
+                        alert("Username is required.");
+                        return;
+                    }
+                
+                    fetch("/register", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/x-www-form-urlencoded",
+                        },
+                        body: `username=${encodeURIComponent(usernameInput)}`,
+                    })
+                    .then((response) => {
+                        if (response.ok) {
+                            return response.text().then((html) => {
+                                document.body.innerHTML = html;
+                            });
+                        } else {
+                            return response.json().then((data) => {
+                                alert(data.message);
+                            });
+                        }
+                    })
+                    .catch((error) => {
+                        console.error("Error:", error);
+                        alert("An error occurred while registering.");
+                    });
+                });
+            </script>
+        </div>
+    </div>
+</body>
+</html>

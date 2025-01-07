@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Note App</title>
+    <link rel="stylesheet" href="https://unpkg.com/98.css">
+</head>
+<body style="background-color: #c0c0c0; align-items: center; justify-content: center; display: flex;">
+    <div>
+        <div class="window" style="width: 500px; height: 210px;">
+            <div class="title-bar">
+                <div class="title-bar-text">Note App</div>
+                <div class="title-bar-controls">
+                    <button aria-label="Minimize"></button>
+                    <button aria-label="Maximize"></button>
+                    <button aria-label="Close"></button>
+                </div>
+            </div>
+            <div class="window-body">
+                <div style="text-align: center; margin-top: 20px;">
+                    <strong style="color: purple; font-size: 30px;">✨ Wellcome to Note App. ✨</strong>
+                </div>
+                <div style="margin-top: 20px; font-size: 15px;">
+                    Press 'Register' for registration.
+                </div>
+                <div style="margin-top: 20px; font-size: 15px;">
+                    Press 'Login' for log in.
+                </div>
+                <div style="margin-top: 15px; margin-left: 260px; display: flex;">
+                    <div style="padding-right: 15px;">
+                        <button onclick="window.location.href='/register'" style="font-size: 15px; height: 30px; width: 100px;">Register</button>
+                    </div>
+                    <button onclick="window.location.href='/login'" style="font-size: 15px; height: 30px; width: 100px;">Login</button>
+                </div>
+            </div>
+        </div>
+        <div class="window" style="width: 500px; margin-top: 40px;">
+            <div class="title-bar">
+                <div class="title-bar-text">Registered Users</div>
+                <div class="title-bar-controls">
+                    <button aria-label="Minimize"></button>
+                    <button aria-label="Maximize"></button>
+                    <button aria-label="Close"></button>
+                </div>
+            </div>
+            <div class="window-body">
+                <p style="font-size: 15px;">List of Registered Users:</p>
+                <ul class="tree-view" style="font-size: 15px;">
+                    {{userList}}
+                </ul>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
