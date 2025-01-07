@@ -17,7 +17,7 @@ docker-compose up
 ```
 cd checker
 pip install -r requirements.txt
-python3 checker <arg1> <arg2> ...
+python3 checker <regime> <hostname> ...
 ```
 ### Exploits
 ```
