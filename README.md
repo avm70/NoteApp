@@ -14,7 +14,7 @@ cd app
 docker-compose up
 ```
 ### Checker
-При запуске режиме "put" после успешного выполнения в stdout выводится новый id для флага вида "username password". Режим "get" работает с использованием изменённого в режиме "put" id.
+При запуске в режиме "put" после успешного выполнения в stdout выводится новый id для флага вида "username password". Режим "get" работает с использованием изменённого в режиме "put" id.
 ```
 cd checker
 pip install -r requirements.txt
