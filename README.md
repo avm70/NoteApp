@@ -18,7 +18,7 @@ docker-compose up
 При запуске в режиме "put" после успешного выполнения в stdout выводится новый id для флага вида "username password". Режим "get" работает с использованием изменённого в режиме "put" id.
 ```
 cd checkers/noteapp
-python3 checker <regime> <hostname> ...
+python3 noteapp.checker.py <regime> <hostname> ...
 ```
 ### Exploits
 ```
