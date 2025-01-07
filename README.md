@@ -9,9 +9,9 @@
 
 ## Запуск
 ### App
-cd app
-docker-compose up
+```cd app```
+```docker-compose up```
 ### Checker
-cd checker
-pip install -r requirements.txt
-python3 checker <arg1> <arg2> ...
+```cd checker```
+```pip install -r requirements.txt```
+```python3 checker <arg1> <arg2> ...```
