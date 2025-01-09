@@ -139,7 +139,7 @@ def get(username, password, flag):
         sys.exit(103)
 
 def info():
-    print('{"vulns": 3, "timeout": 30, "attack_data": ""}', flush=True, end="")
+    print('{"vulns": 1, "timeout": 30, "attack_data": ""}', flush=True, end="")
     exit(101)
 
 if __name__ == '__main__':
