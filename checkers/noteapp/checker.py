@@ -14,8 +14,15 @@ def generate_random_string():
     return random_part + '='
 
 def check():
-    username = generate_name()
     session = requests.Session()
+    response = session.get(url, data="")
+    if response.status_code == 200:
+        soup = BeautifulSoup(response.text, 'html.parser')
+        li_elements = soup.find_all('li')
+        i_texts = [li.get_text() for li in li_elements]
+    username = generate_name()
+    while username in i_texts:
+        username = generate_name()
     data = {
         'username': username
     }
