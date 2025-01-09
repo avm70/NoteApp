@@ -35,7 +35,7 @@ def check():
             print("No password.", file=sys.stderr)
             sys.exit(103)
     else:
-        print("Registration failed.", file=sys.stderr)
+        print("Registration failed." + response.text, file=sys.stderr)
         sys.exit(103)
     response = session.get(url, data="")
     if response.status_code == 200:
@@ -79,8 +79,15 @@ def check():
         sys.exit(103)
 
 def put(flag):
-    username = generate_name()
     session = requests.Session()
+    response = session.get(url, data="")
+    if response.status_code == 200:
+        soup = BeautifulSoup(response.text, 'html.parser')
+        li_elements = soup.find_all('li')
+        i_texts = [li.get_text() for li in li_elements]
+    username = generate_name()
+    while username in i_texts:
+        username = generate_name()
     data = {
         'username': username
     }
@@ -93,7 +100,7 @@ def put(flag):
             print("No password.", file=sys.stderr)
             sys.exit(103)
     else:
-        print("Registration failed.", file=sys.stderr)
+        print("Registration failed. " + response.text, file=sys.stderr)
         sys.exit(103)
     login_data = {
         'username': username,
